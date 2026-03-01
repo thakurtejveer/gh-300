@@ -305,3 +305,286 @@ Troubleshooting:
 - Business vs Enterprise differences
 - Inline suggestions vs Chat vs Inline Chat
 - Developer responsibility for validating AI-generated code
+
+
+# GH-300  
+# GitHub Copilot Fundamentals – Section 1.3  
+# Introduction to Prompt Engineering with GitHub Copilot
+
+---
+
+# 1.3 Prompt Engineering Overview
+
+## What is Prompt Engineering?
+
+Prompt engineering is the practice of crafting clear, precise, and structured instructions to get accurate and relevant responses from GitHub Copilot.
+
+Key Idea:
+Better prompts → Better code suggestions → Fewer revisions → Faster development.
+
+---
+
+## Learning Focus
+
+You must understand:
+
+- How prompts influence Copilot responses
+- Best practices for writing effective prompts
+- Role prompting and chat history management
+- How Copilot processes prompts internally
+- Data handling and filtering
+- LLMs and fine-tuning (LoRA)
+
+---
+
+# 1.3.1 Why Prompt Engineering Matters
+
+GitHub Copilot:
+- Is powered by Large Language Models (LLMs)
+- Trained on public source code + natural language
+- Provides context-aware suggestions
+
+However:
+Copilot performance depends heavily on prompt clarity.
+
+Clear + specific + contextual prompts improve accuracy.
+
+---
+
+# 1.3.2 GitHub Copilot User Prompt Process Flow
+
+Copilot follows an inbound and outbound process.
+
+---
+
+## Inbound Flow (Prompt → Model)
+
+### 1. Secure Prompt Transmission
+
+- Prompt sent over HTTPS
+- Ensures confidentiality
+- Protects sensitive data
+
+---
+
+### 2. Context Gathering
+
+Copilot collects:
+
+- Code before and after cursor
+- Filename and file type
+- Adjacent open tabs
+- Project structure and file paths
+- Programming language and frameworks
+
+Uses:
+Fill-in-the-Middle (FIM) technique  
+→ Considers both preceding and following code.
+
+Key Point:
+Copilot does NOT rely only on your prompt. It uses surrounding context.
+
+---
+
+### 3. Proxy Filter
+
+- Runs in GitHub-owned Azure tenant
+- Blocks prompt manipulation attempts
+- Prevents system exploitation
+
+---
+
+### 4. Toxicity Filtering (Before Generation)
+
+Filters:
+
+- Hate speech
+- Inappropriate content
+- Personal data
+
+Goal:
+Prevent harmful or sensitive output.
+
+---
+
+### 5. Code Generation (LLM Stage)
+
+- Prompt + context passed to LLM
+- Generates context-aware suggestions
+- Ensures alignment with project requirements
+
+---
+
+## Outbound Flow (Model → User)
+
+### 6. Post-Processing & Validation
+
+After generation:
+
+- Toxic content rechecked
+- Security checks applied
+- Vulnerability checks (XSS, SQL injection)
+- Optional public code similarity filter (~150+ characters)
+
+If failed → suggestion truncated or discarded.
+
+---
+
+### 7. Suggestion Delivery & Feedback Loop
+
+- Valid suggestions returned
+- Copilot learns from:
+  - Accepted suggestions
+  - Modifications
+  - Rejections
+
+Process repeats for each prompt.
+
+---
+
+# 1.3.3 GitHub Copilot Data Handling
+
+## Code Suggestions
+
+- Prompts are NOT retained for foundational model training.
+- Prompts are discarded after suggestion.
+- Individual users can opt out of prompt sharing.
+
+---
+
+## Copilot Chat Data
+
+- Maintains conversation history for context.
+- Outside editor: data retained ~28 days.
+- Retention policies may vary inside IDE.
+
+Important:
+Chat has broader retention compared to inline completions.
+
+---
+
+## Supported Prompt Types in Chat
+
+- Direct questions
+- Code generation requests
+- Code explanation
+- Open-ended queries
+- Contextual prompts with snippets
+
+Copilot Chat handles diverse coding inputs.
+
+---
+
+# Context Window Limitations
+
+Standard Copilot:
+~200–500 lines of code (few thousand tokens)
+
+Copilot Chat:
+~4k tokens context window
+
+Best Practice:
+Break large problems into smaller prompts.
+
+---
+
+# 1.3.4 Large Language Models (LLMs)
+
+## What Are LLMs?
+
+LLMs are AI models trained on massive text datasets to:
+
+- Understand language
+- Generate coherent text
+- Predict next tokens
+- Perform contextual reasoning
+
+They use:
+Neural networks with millions/billions of parameters.
+
+---
+
+## Role of LLMs in Copilot
+
+LLMs:
+- Analyze prompt + surrounding code
+- Generate context-aware completions
+- Improve productivity
+
+---
+
+# Fine-Tuning LLMs
+
+Fine-tuning:
+- Adapts pretrained model to specific tasks
+- Uses smaller task-specific dataset
+- Improves performance for domain use
+
+---
+
+# LoRA Fine-Tuning (Important for Exam)
+
+LoRA = Low-Rank Adaptation
+
+Instead of retraining full model:
+
+- Adds smaller trainable layers
+- Keeps original model unchanged
+- Saves resources
+- Faster adaptation
+
+Advantage:
+Efficient + cost-effective fine-tuning.
+
+Exam Focus:
+LoRA adds small trainable components instead of retraining entire network.
+
+---
+
+# Prompt Engineering Best Practices
+
+To improve prompts:
+
+- Be specific and explicit
+- Provide relevant context
+- Define desired output format
+- Use role prompting when needed
+- Manage chat history carefully
+- Break complex tasks into smaller steps
+
+Better context → Better results.
+
+---
+
+# High-Probability Exam Areas
+
+- Prompt process flow steps (secure transmission → context → filtering → LLM → validation)
+- Fill-in-the-Middle (FIM)
+- Context window limits
+- Data retention differences (editor vs chat)
+- LoRA fine-tuning
+- Toxicity filtering
+- Public code similarity filtering
+- Prompt clarity improves suggestion quality
+
+---
+
+# Ultra-Short Cram Summary
+
+Prompt Engineering = Crafting precise instructions for better Copilot results.
+
+Process:
+Secure transmission → Context gathering → Proxy filter → Toxicity filter → LLM → Post-validation → Delivery.
+
+Context matters:
+File content + open tabs + project structure.
+
+Data:
+Inline prompts discarded.
+Chat retains data (~28 days).
+
+LLMs:
+Large pretrained models.
+Fine-tuned using LoRA (efficient adaptation).
+
+Human remains responsible for reviewing AI-generated code.
