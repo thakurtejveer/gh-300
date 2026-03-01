@@ -1076,3 +1076,346 @@ Copilot helps with:
 - Tests
 - Docs
 - Refactoring
+
+
+# GH-300  
+# Section 1.6 – GitHub Copilot Across Environments (High-Weightage Detailed Notes)
+
+---
+
+# 1️⃣ Copilot in IDE (Code Completion)
+
+## Strongly Supported Languages
+- Python
+- JavaScript
+- Java
+- TypeScript
+- Ruby
+- Go
+- C#
+- C++
+
+Exam Trap:
+Rust is NOT listed as strongly supported.
+
+---
+
+## Auto Suggestions (Ghost Text)
+
+Definition:
+Inline suggestions that appear as you type.
+
+Key Points:
+- Context-aware
+- Can complete line or entire function
+- Accept → Tab
+- Ignore → Keep typing
+- Uses open files as context by default
+
+Benefit:
+Reduces syntax searching and repetitive coding.
+
+---
+
+## Multiple Suggestions Pane
+
+When suggestion appears:
+- Hover over suggestion
+- Use arrows to cycle
+
+Keyboard shortcuts:
+Windows/Linux:
+Alt + ] → Next suggestion  
+Alt + [ → Previous suggestion  
+
+Mac:
+Option + ] → Next  
+Option + [ → Previous  
+
+Why Important:
+Lets you compare different implementations quickly.
+
+---
+
+## Copilot Adapts To Your Style
+
+Copilot learns from your project:
+
+- Naming conventions
+- Indentation style
+- Bracket placement
+- Comment style (inline, block, docstring)
+- Design patterns used
+
+Exam Insight:
+Copilot follows project patterns — it does NOT generate random style.
+
+---
+
+# 2️⃣ Using Comments to Improve Suggestions
+
+Copilot reads:
+
+- Inline comments
+- Block comments
+- Docstrings
+- TODO comments
+- API documentation
+
+How It Helps:
+
+- Generates full function from description
+- Suggests correct variable names
+- Selects appropriate algorithms
+- Follows documented logic
+
+Important:
+Clear and specific comments → More accurate code.
+
+---
+
+# 3️⃣ GitHub Copilot Chat (IDE)
+
+Used for:
+
+- Complex code generation
+- Debugging
+- Code explanation
+- Writing tests
+- Refactoring
+
+---
+
+## Opening Chat
+
+Sidebar Chat → Click chat icon  
+Inline Chat:
+Windows → Ctrl + i  
+Mac → Command + i  
+
+Inline chat keeps you inside the file.
+
+---
+
+# Improving Chat Responses (Exam Focus)
+
+## Scope Referencing
+
+Reference specific file:
+
+#file:controller.js explain this function
+
+Reference whole project:
+
+@workspace where is calculate() used?
+
+Purpose of @workspace:
+Extends context to entire project.
+
+Exam Question Area:
+@workspace = whole solution context.
+
+---
+
+## Important Slash Commands (Chat)
+
+/doc → Add documentation  
+/explain → Explain selected code  
+/fix → Fix selected code  
+/generate → Generate new code  
+/optimize → Improve runtime  
+/tests → Generate unit tests  
+
+Exam Trap:
+/tests is correct, not /test.
+
+Slash commands:
+- Improve precision
+- Reduce need for long prompts
+
+---
+
+# 4️⃣ Model Selection & PRUs
+
+Standard Model:
+- 1 PRU per request
+- Suitable for normal tasks
+
+Premium Models:
+- 2 PRUs per request
+- Better for complex reasoning
+- Used for advanced debugging, architecture decisions
+
+Exam Focus:
+PR summaries and code review consume PRUs.
+
+---
+
+# 5️⃣ GitHub Copilot on GitHub.com
+
+Available in:
+
+- Repository pages
+- Pull Requests
+- Issues
+- Discussions
+- Code Review
+- GitHub Actions
+
+---
+
+## Repository Exploration
+
+Copilot can:
+
+- Explain files
+- Summarize project
+- Generate documentation
+- Analyze architecture
+
+---
+
+## Pull Request Assistance
+
+Copilot can:
+
+- Generate PR summaries
+- Suggest improvements
+- Suggest documentation updates
+- Help resolve merge conflicts
+
+Billing Note:
+PR summaries consume PRUs.
+
+---
+
+## Issue Management
+
+Copilot can:
+
+- Break down issues
+- Suggest solutions
+- Generate reproduction steps
+
+---
+
+## Code Review
+
+Copilot can:
+
+- Suggest review comments
+- Identify security issues
+- Suggest performance improvements
+
+Billing Note:
+Code review consumes PRUs.
+
+---
+
+## What Copilot Does NOT Do
+
+- Does NOT compile applications
+- Does NOT deploy applications
+- Does NOT grant repository access
+
+It assists — does not execute builds.
+
+---
+
+# 6️⃣ GitHub Copilot CLI (Command Line)
+
+Copilot works in terminal.
+
+Used for:
+
+- Explaining commands
+- Suggesting shell commands
+- Revising commands
+- Automating tasks
+
+---
+
+## Start CLI
+
+Interactive mode:
+copilot
+
+One-shot mode:
+copilot -i "explain git reset --hard HEAD"
+
+---
+
+## Important CLI Commands (Exam Focus)
+
+Explain a command:
+gh copilot explain <command>
+
+Suggest command:
+gh copilot suggest "<task>"
+
+Example:
+gh copilot explain git reset --hard HEAD  
+gh copilot suggest "find large files"
+
+---
+
+## Common CLI Slash Commands
+
+/help  
+/explain  
+/suggest  
+/revise  
+/feedback  
+/exit  
+/model  
+/theme  
+
+Important:
+Slash commands control session settings.
+
+---
+
+## CLI Safety & Configuration
+
+- Must trust directory before running
+- Review commands before execution
+- Manage tool permissions
+- Control allowed directories
+- Can choose model using /model
+
+---
+
+# Billing Awareness (High Exam Area)
+
+Consumes PRUs:
+
+- PR summaries
+- Code review
+- Premium model usage
+- Advanced workspace analysis
+
+Standard request → 1 PRU  
+Premium request → 2 PRUs  
+
+Exam may test PRU awareness.
+
+---
+
+# Quick Environment Comparison
+
+IDE → Code completion + multiple suggestions  
+Chat → Natural language + slash commands  
+GitHub.com → PRs, Issues, Code review  
+CLI → Explain & suggest shell commands  
+
+---
+
+# 2-Minute Final Revision
+
+Alt + ] → Next suggestion  
+Ctrl + i / Cmd + i → Inline chat  
+/tests → Generate unit tests  
+@workspace → Entire project context  
+gh copilot explain → Explain CLI command  
+PR summaries use PRUs  
+Copilot does NOT compile or deploy apps  
