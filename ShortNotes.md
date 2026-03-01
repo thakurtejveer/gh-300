@@ -842,3 +842,237 @@ Key principles:
 - Keep scope small
 - Lead with most important sources
 - Assign ownership and review regularly
+
+
+
+# GH-300  
+# GitHub Copilot Fundamentals – Section 1.5  
+# Using Advanced GitHub Copilot Features
+
+---
+
+# 1.5 Overview
+
+GitHub Copilot helps you:
+
+- Write code faster
+- Fix bugs
+- Create tests
+- Write documentation
+- Interact using chat and agents
+
+Works inside:
+- Visual Studio Code
+- GitHub Codespaces
+- Other supported editors
+
+---
+
+# Ghost Text
+
+Ghost text = Suggestions that appear in your editor while typing.
+
+- Appears in light/grey text
+- Accept with Tab
+- Ignore by continuing to type
+
+Ghost text does not require a prompt.
+Copilot uses open files as context by default.
+
+---
+
+# Chat Feature
+
+You can talk to Copilot using natural language.
+
+Open Chat:
+- Click chat icon in VS Code sidebar
+
+Use Chat to:
+- Ask coding questions
+- Generate code
+- Explain code
+- Write tests
+- Write documentation
+
+---
+
+# Inline Chat
+
+Inline chat lets you interact without leaving your code.
+
+Open inline chat:
+- Windows: Ctrl + i
+- Mac: Command + i
+
+Benefit:
+You stay inside the file while getting help.
+
+---
+
+# Slash Commands
+
+Slash commands are shortcuts to perform common tasks quickly.
+
+Used in:
+- Chat pane
+- Inline chat
+
+Common slash commands:
+
+- /fix → Fix code
+- /doc → Add documentation
+- /explain → Explain code
+- /generate → Generate code
+- /help → Get help about Copilot
+- /optimize → Improve performance
+- /tests → Create unit tests
+
+Purpose:
+Get better results without writing long prompts.
+
+---
+
+# Implicit Prompts
+
+Implicit prompts = Using slash commands with selected code.
+
+Example:
+Select buggy code → open inline chat → type /fix
+
+Benefit:
+- Faster interaction
+- No need to write long explanations
+- Easier bug fixing
+
+---
+
+# Agents
+
+Agents allow context-specific questions.
+
+You must prefix your question with @agent_name.
+
+---
+
+## @workspace Agent
+
+- Uses entire project as context
+- Good for project-wide questions
+- Example:
+  @workspace How do I package this project?
+
+Use for:
+- Creating Dockerfiles
+- Writing README documentation
+- Understanding full project structure
+
+---
+
+## @terminal Agent
+
+- Uses terminal output as context
+- Helps fix command errors
+- Example:
+  @terminal How do I fix this error?
+
+---
+
+## @file Agent
+
+- Focuses on a specific file
+- Example:
+  @file Can you refactor this function?
+
+---
+
+## @directory Agent
+
+- Focuses on a specific folder
+- Example:
+  @directory How can I improve scripts in this folder?
+
+---
+
+# Selective Context
+
+By default:
+Copilot uses open files as context.
+
+You can narrow context using:
+- Agents
+- Selecting code
+- Inline chat
+
+This gives more precise answers.
+
+---
+
+# Using Copilot in Existing Projects
+
+Copilot can help you:
+
+- Add new API routes
+- Fix bugs
+- Create unit tests
+- Write documentation
+- Generate Dockerfiles
+
+Example workflow:
+1. Create new route (inline chat)
+2. Create test using /tests
+3. Document project using @workspace
+
+---
+
+# Codespaces Notes
+
+Codespaces:
+- Cloud development environment
+- Preconfigured with Copilot
+- Runs in browser
+- Limited free hours per month
+
+Important:
+Commit and push changes before deleting Codespace.
+
+---
+
+# High-Probability Exam Areas
+
+- Definition of ghost text
+- Shortcut for inline chat (Ctrl+i / Cmd+i)
+- Purpose of slash commands
+- Difference between chat and inline chat
+- What agents do
+- Role of @workspace
+- Benefit of implicit prompts
+- Agents provide context-specific answers
+
+---
+
+# Ultra-Short Cram Summary
+
+Ghost text = Inline suggestions.
+
+Inline chat = Ctrl+i / Cmd+i.
+
+Slash commands = Shortcuts for tasks like:
+- /fix
+- /doc
+- /tests
+- /explain
+
+Agents:
+- @workspace → whole project
+- @terminal → terminal errors
+- @file → single file
+- @directory → folder
+
+Implicit prompts + slash commands = Faster fixes.
+
+Copilot helps with:
+- Code
+- Tests
+- Docs
+- Refactoring
