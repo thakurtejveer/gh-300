@@ -1636,3 +1636,707 @@ Content exclusion → Removes file from Copilot context
 Exclusions may delay up to 30 min  
 No suggestions? → Check internet first  
 Enterprise → Private codebase chat + knowledge base   
+
+
+# GH-300  
+# Section 1.8 – Developer Use Cases for AI with GitHub Copilot
+
+---
+
+# 1️⃣ Core Idea of This Module
+
+Focus Areas:
+
+- How Copilot improves developer productivity
+- How it fits into SDLC stages
+- Developer preference alignment
+- Limitations of AI-assisted coding
+- Measuring productivity impact (REST API + Surveys)
+
+---
+
+# 2️⃣ Boost Developer Productivity
+
+## A. Accelerating Learning
+
+Copilot helps when learning new languages/frameworks by:
+
+- Providing context-aware code snippets
+- Suggesting correct API usage
+- Showing function parameters inline
+- Reducing need to search documentation
+
+Exam Answer:
+Copilot accelerates learning by providing context-aware snippets and inline documentation.
+
+---
+
+## B. Minimizing Context Switching
+
+Problem:
+Developers lose focus when switching between IDE and browser.
+
+Copilot solves by:
+
+- In-editor suggestions
+- API method suggestions
+- Autocompletion of repetitive code
+- Explaining code inside IDE
+
+Exam Answer:
+Copilot reduces context switching by providing suggestions directly in the editor.
+
+---
+
+## C. Enhanced Documentation
+
+Copilot can:
+
+- Generate inline comments
+- Create function descriptions
+- Suggest parameter explanations
+- Generate README structure
+- Maintain documentation consistency
+
+Exam Answer:
+Generates contextually relevant inline comments and function descriptions.
+
+---
+
+## D. Automating Routine Tasks
+
+Copilot can:
+
+- Generate boilerplate code (REST API, class structures)
+- Generate sample test data
+- Create unit tests
+- Refactor code
+- Translate code between languages
+
+Exam Answer:
+Generates boilerplate code for common functionalities.
+
+---
+
+# 3️⃣ Advanced Automation Scenarios
+
+## Complex Boilerplate
+
+- Database models
+- ORM setup
+- Migration files
+- API endpoint scaffolding
+- Docker & CI/CD configs
+
+Note:
+Large multi-file generation → 3–5 PRUs
+
+---
+
+## Story-Driven Development
+
+From simple user story → generate:
+
+- Backend logic
+- API endpoints
+- Database changes
+- Tests
+- Documentation
+- Basic frontend structure
+
+This enables rapid prototyping.
+
+---
+
+## Pull Request Acceleration
+
+Copilot helps with:
+
+- Complete feature implementations
+- Unit tests generation
+- Documentation updates
+- PR summary drafting
+- Merge conflict resolution
+
+PR summary & refactor drafts → consume PRUs
+
+---
+
+# 4️⃣ Developer Preference Alignment
+
+Copilot aligns with modern developer preferences:
+
+## Integrated Experience
+
+- Works inside IDE
+- No complex setup
+- Uses project context automatically
+
+## Multiple Suggestions
+
+- Offers alternative implementations
+- Supports language idioms
+- Maintains coding standards
+
+## Refactoring Support
+
+- Suggests modern syntax
+- Improves readability
+- Maintains consistency
+
+## Debugging Assistance
+
+- Explains errors
+- Suggests fixes
+- Suggests log statements
+- Suggests additional test cases
+
+Important:
+Copilot assists debugging but is NOT a debugger.
+
+---
+
+# 5️⃣ Copilot Across SDLC
+
+Copilot impacts multiple SDLC phases.
+
+---
+
+## Requirement Phase
+
+- Rapid prototyping
+- User story → initial function/class structure
+- API design suggestions
+
+---
+
+## Design & Development
+
+- Boilerplate generation
+- Design pattern suggestions
+- Code optimization
+- Cross-language translation
+
+This is Copilot’s strongest phase.
+
+---
+
+## Testing & QA
+
+- Unit test generation
+- Edge case suggestions
+- Assertion suggestions
+- Test data generation
+
+Improves coverage & robustness.
+
+---
+
+## Deployment
+
+Copilot does NOT deploy apps.
+
+But helps with:
+
+- Deployment scripts
+- Config files
+- Documentation updates
+
+---
+
+## Maintenance & Support
+
+- Bug fix suggestions
+- Refactoring suggestions
+- Legacy code explanation
+- Documentation updates
+
+---
+
+# 6️⃣ Orchestrated AI Workflows
+
+Multi-agent patterns:
+
+Draft Agent:
+- Generate feature code
+
+Review Agent:
+- Review for quality & security
+
+Test Agent:
+- Generate test suite
+
+Documentation Agent:
+- Generate docs
+
+Each handoff ≈ 1 PRU
+
+Premium reasoning → ~4+ PRUs
+
+---
+
+# 7️⃣ Limitations of GitHub Copilot
+
+Very Important Exam Area
+
+---
+
+## Code Quality Limitations
+
+- May generate bugs
+- May miss edge cases
+- May suggest insecure code
+- Requires human review
+
+---
+
+## Context Limitations
+
+- Can misinterpret broader context
+- Not ideal for complex architecture decisions
+- Limited high-level system design capability
+
+---
+
+## Training Data Bias
+
+- Reflects patterns from training data
+- May include outdated practices
+- Copyright concerns exist
+
+---
+
+## Language Variation
+
+- Stronger in common languages
+- Less accurate in niche technologies
+
+Exam Insight:
+Copilot supports developers but does NOT replace human creativity or architecture design.
+
+---
+
+# 8️⃣ Measuring Productivity Impact
+
+Very High Exam Area
+
+---
+
+# A. REST API for Usage Metrics
+
+Used to measure:
+
+- Suggestions
+- Acceptances
+- Active users
+- Chat interactions
+- Editor & language breakdown
+
+---
+
+## Enterprise Usage Endpoint
+
+GET /enterprises/{enterprise}/GitHub Copilot/usage
+
+---
+
+## Enterprise Team Usage
+
+GET /enterprises/{enterprise}/team/{team_slug}/GitHub Copilot/usage
+
+---
+
+## Organization Usage
+
+GET /orgs/{org}/GitHub Copilot/usage
+
+Returns:
+JSON with daily usage metrics.
+
+---
+
+# Measurement Framework
+
+1. Evaluation Phase
+   - Developer satisfaction
+   - Acceptance rate
+   - Daily active users
+
+2. Adoption Phase
+   - Engagement trends
+   - Productivity patterns
+
+3. Optimization Phase
+   - Improve time-to-market
+   - Improve code quality
+
+4. Sustained Efficiency
+   - Continuous monitoring
+
+---
+
+# 9️⃣ GitHub Copilot Developer Survey
+
+Two types:
+
+## Short-Form (Every 2 Weeks)
+
+Measures:
+- Satisfaction
+- Time saved
+- Challenges
+
+## Long-Form (Monthly)
+
+Measures:
+- Team impact
+- Code quality improvements
+- Workflow improvements
+
+Important:
+Responses must be anonymized.
+
+---
+
+# 🔥 High-Probability Exam Points
+
+- Copilot reduces context switching
+- Generates inline documentation
+- Automates boilerplate code
+- Supports SDLC phases (strongest in development & testing)
+- Has limitations (requires review)
+- REST API used for usage metrics
+- Developer survey used for qualitative impact
+- Does NOT replace human architectural decision making
+- Complex automation consumes more PRUs
+
+---
+
+# 2-Minute Cram
+
+Learning → Context-aware snippets  
+Context switching → In-editor suggestions  
+Documentation → Inline comments auto-generated  
+Boilerplate → REST API scaffolding  
+Testing → Unit tests + edge cases  
+Limitations → Needs human review  
+Metrics → REST API usage endpoints  
+Survey → Short-form (2 weeks), Long-form (4 weeks)  
+Copilot ≠ replacement for human creativity  
+
+
+# GH-300  
+# Section 1.9 – Develop Unit Tests Using GitHub Copilot
+
+---
+
+# 1️⃣ Core Focus of This Module
+
+Use GitHub Copilot + Visual Studio Code to:
+
+- Generate unit tests
+- Cover edge cases & boundary conditions
+- Fix failing tests
+- Automate testing workflows
+
+Tech Stack Focus:
+- C#
+- .NET SDK (8.0+)
+- C# Dev Kit
+- xUnit (primary example)
+- NUnit / MSTest supported
+
+---
+
+# 2️⃣ What Copilot Can Do in Testing
+
+Copilot helps with:
+
+- Setting up testing frameworks
+- Generating unit tests
+- Writing edge case tests
+- Suggesting assertions
+- Fixing failing tests
+- Maintaining test consistency
+
+⚠ Important:
+Generated tests are NOT guaranteed complete → Manual review required.
+
+---
+
+# 3️⃣ Setting Up Testing Framework
+
+## Step 1: Create Test Project
+
+Open Command Palette:
+
+Ctrl + Shift + P  
+→ .NET: New Project  
+→ Choose:
+
+- xUnit Test Project
+- NUnit3 Test Project
+- MSTest Test Project
+
+---
+
+## Step 2: Add Project Reference
+
+Terminal command:
+
+dotnet add [test project path] reference [main project path]
+
+This links test project to application project.
+
+---
+
+# 4️⃣ Test Frameworks Supported
+
+## xUnit (Most Used)
+
+Packages added:
+
+- Microsoft.NET.Test.Sdk
+- xUnit
+- xunit.runner.visualstudio
+- coverlet.collector
+
+---
+
+## NUnit
+
+Packages:
+
+- Microsoft.NET.Test.Sdk
+- NUnit
+- NUnit3TestAdapter
+
+---
+
+## MSTest
+
+Packages:
+
+- Microsoft.NET.Test.Sdk
+- MSTest.TestAdapter
+- MSTest.TestFramework
+- coverlet.collector
+
+---
+
+# 5️⃣ Tools to Generate Unit Tests
+
+There are FOUR main ways.
+
+---
+
+# A️⃣ Generate Tests Smart Action
+
+No prompt required.
+
+Steps:
+
+1. Open file
+2. Right-click
+3. Copilot → Generate Tests
+4. Review generated tests
+5. Save
+6. Run tests
+
+Can generate for:
+- Entire file
+- Selected code
+
+Best for:
+Quick bulk test generation.
+
+---
+
+# B️⃣ Inline Chat (More Control)
+
+Shortcut:
+
+Ctrl + I
+
+Example prompt:
+
+/tests Generate unit tests for this method. Validate success and failure. Include edge cases.
+
+Advantages:
+- More control than smart action
+- Works on selection
+- Generates targeted test cases
+
+Best for:
+Specific functions.
+
+---
+
+# C️⃣ Chat View Modes
+
+Three Modes:
+
+---
+
+## 1. Ask Mode
+
+Best for:
+Analyzing workspace & generating tests.
+
+Can use:
+@workspace  
+#selection  
+#editor  
+
+Example:
+
+@workspace Write unit tests for this file using xUnit.
+
+---
+
+## 2. Edit Mode
+
+Best for:
+Editing multiple files.
+
+Limitations:
+No @workspace support.
+
+Uses:
+#codebase  
+Drag files into context.
+
+---
+
+## 3. Agent Mode (Most Powerful)
+
+Best for:
+End-to-end workflow automation.
+
+Can:
+
+- Create test project
+- Create test files
+- Run tests
+- Fix errors
+- Generate reports
+
+⚠ Uses Premium Requests (PRUs)
+Complex workflows consume more.
+
+---
+
+# 6️⃣ Fixing Failing Tests
+
+Two ways:
+
+---
+
+## Option 1: Test Explorer
+
+Hover failing test  
+Click sparkle icon (Fix Test Failure)
+
+---
+
+## Option 2: Chat Command
+
+/fixTestFailure
+
+Agent mode can:
+Automatically rerun & attempt fixes.
+
+---
+
+# 7️⃣ Edge Case Handling (Exam Favorite)
+
+Copilot helps identify:
+
+- Null values
+- Invalid input
+- Boundary conditions
+- Error handling
+- Unexpected input types
+
+Best Practice:
+Describe edge cases explicitly in Chat.
+
+Example:
+
+"Include edge cases for null and negative values."
+
+---
+
+# 8️⃣ Maintain Consistency
+
+You can personalize Copilot by:
+
+- Specifying framework (xUnit/NUnit)
+- Naming conventions
+- Test structure format
+- Assertion style
+
+Ensures:
+Team-wide consistency.
+
+---
+
+# 9️⃣ Running & Managing Tests
+
+C# Dev Kit Features:
+
+- Test Explorer (beaker icon)
+- Run/Debug test
+- View results
+- Run All Tests command
+- Testing settings
+
+Green Play button → Run test
+
+---
+
+# 🔟 Smart Commands Summary
+
+/setupTests → Setup testing framework  
+/tests → Generate tests  
+/fixTestFailure → Fix failing test  
+
+Inline Chat → Ctrl + I  
+Command Palette → Ctrl + Shift + P  
+
+---
+
+# 1️⃣1️⃣ Important Exam Concepts
+
+- Copilot suggests assertions based on semantics
+- Copilot can identify missing edge cases
+- Copilot does NOT guarantee 100% coverage
+- Manual testing still required
+- Agent mode consumes Premium Requests
+- Test project must reference main project
+- C# Dev Kit required for C# testing
+
+---
+
+# 1️⃣2️⃣ High-Probability Assessment Answers
+
+Edge cases → Use Chat view and describe them  
+Improve code quality → Suggest edge & boundary tests  
+Missing suggestions → Check setup & subscription  
+Initial setup → Install C# Dev Kit + Copilot  
+Best practice → Review + supplement manually  
+Consistency → Personalize test generation  
+
+---
+
+# 🔥 2-Minute Cram
+
+Smart Action → Quick test generation  
+Inline Chat → Controlled generation  
+Ask Mode → Analyze workspace  
+Edit Mode → Multi-file edits  
+Agent Mode → Full automation  
+Fix Test → Sparkle icon or /fixTestFailure  
+Edge cases → Null, boundary, invalid input  
+Manual review → Always required  
+dotnet add reference → Link test to project  
