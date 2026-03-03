@@ -1418,4 +1418,221 @@ Ctrl + i / Cmd + i → Inline chat
 @workspace → Entire project context  
 gh copilot explain → Explain CLI command  
 PR summaries use PRUs  
-Copilot does NOT compile or deploy apps  
+Copilot does NOT compile or deploy apps
+
+
+# GH-300  
+# Section 1.7 – Management & Customization (High-Weightage Notes)
+
+---
+
+# 1️⃣ Copilot Plans & Features
+
+## Plans
+- Free
+- Pro
+- Business
+- Enterprise
+
+Free has usage limits.
+
+---
+
+# Management & Security Features by Plan
+
+## Available ONLY in Business & Enterprise
+
+- User management
+- Data excluded from training by default
+- Enterprise-grade security
+- IP indemnity
+- Content exclusions
+- SAML SSO
+- Usage metrics
+
+## Enterprise Only
+
+- Requires GitHub Enterprise Cloud
+- Tailor chat to private codebase
+- Attach knowledge bases to chat
+
+Exam Focus:
+Enterprise-grade security → Business & Enterprise  
+IP indemnity → Business & Enterprise  
+Tailored private codebase chat → Enterprise only  
+
+---
+
+# Public Code Filter
+
+Purpose:
+Blocks suggestions that match public code.
+
+Why Important:
+Required to activate IP indemnity.
+
+---
+
+## Who Controls It?
+
+### Organization (Business/Enterprise)
+- Admin controls for all members
+- Must block public code for IP indemnity
+
+### Personal Paid Account (Free/Pro/Pro+)
+- User can toggle Allow or Block
+
+### Org-Provided License
+- May be locked by organization policy
+
+Exam Insight:
+IP indemnity requires blocking public code at org level.
+
+---
+
+# Contractual Protections
+
+## IP Indemnity
+- Legal protection against IP claims
+- GitHub assumes responsibility
+- Available only in Business & Enterprise
+- Requires public code filter blocked
+
+## Data Protection Agreement (DPA)
+- Defines data handling & privacy compliance
+
+## Copilot Trust Center
+- Transparency on privacy, compliance, security
+
+---
+
+# 2️⃣ Content Exclusions
+
+Purpose:
+Prevent specific files, folders, or repos from informing Copilot suggestions.
+
+---
+
+## Configure at Repository Level
+
+Repository → Settings → Copilot  
+Specify files/paths to exclude.
+
+---
+
+## Configure at Organization Level
+
+Organization → Settings → Copilot → Content exclusion  
+Specify repos/files to exclude.
+
+---
+
+## Impact of Exclusion
+
+When file is excluded:
+
+- No code completion in that file
+- File does NOT inform other file suggestions
+- File does NOT inform Copilot Chat
+
+Important:
+Improves security but reduces context accuracy.
+
+---
+
+## Limitations of Content Exclusion
+
+1. IDE Limitation
+   - In some cases (e.g., @github chat participant), exclusion may not apply.
+
+2. Semantic Leakage
+   - Type info or hover info may still influence suggestions.
+
+3. Scope Limitation
+   - Applies only to licensed org members.
+   - Others with access may still get suggestions.
+
+Exam Trap:
+Content exclusion does NOT guarantee full isolation in all IDE features.
+
+---
+
+# 3️⃣ Troubleshooting Common Issues
+
+---
+
+## Problem: No Code Suggestions
+
+Check:
+
+- Internet connection
+- Extension updated
+- IDE compatibility
+- Content exclusions blocking file
+
+Exam Answer:
+Check internet connection first.
+
+---
+
+## Problem: Content Exclusions Not Working
+
+Possible Causes:
+
+- Takes up to 30 minutes to apply
+- Scope not applied to all users
+- IDE limitation
+- Need to reload IDE
+
+Indicator:
+Copilot icon has diagonal line if excluded.
+
+---
+
+## Problem: Poor Suggestions
+
+Improve by:
+
+- Writing clearer comments
+- Using meaningful variable names
+- Using Copilot commands
+- Adjusting prompt length
+- Trigger suggestions (Ctrl+Enter in VS Code)
+
+---
+
+# 4️⃣ Plan Selection Considerations
+
+When choosing plan, evaluate:
+
+- Data privacy requirements
+- Need for org policy control
+- IP indemnity requirement
+- Compliance requirements
+- Audit logging needs
+- SSO requirement
+
+Business & Enterprise → Strongest privacy controls.
+
+---
+
+# 🔥 High-Probability Exam Points
+
+- Enterprise-grade security → Business & Enterprise
+- IP indemnity → Business & Enterprise
+- Public code filter must be blocked for indemnity
+- Content exclusion removes file from influencing suggestions
+- Content exclusion may take 30 minutes to apply
+- First troubleshooting step → Check internet connection
+- Enterprise required for tailoring chat to private codebase
+
+---
+
+# 2-Minute Cram
+
+Business & Enterprise → Security + IP indemnity  
+Block public code → Required for indemnity  
+Content exclusion → Removes file from Copilot context  
+Exclusions may delay up to 30 min  
+No suggestions? → Check internet first  
+Enterprise → Private codebase chat + knowledge base   
